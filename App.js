@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
       fontWeight : "bold",
       marginTop : 10
   },
-  button : {
+  button : { 
       marginTop : 60,
       borderRadius : 10,
       backgroundColor : "#425563",
