@@ -1,47 +1,24 @@
 import React, {useState} from 'react';
-import {
-  TouchableOpacity,
-  StyleSheet,
-  ScrollView,
-  Text,
-  View,
-  TextInput,
-} from 'react-native';
-import {Header} from './Components/Header';
+import { StyleSheet, ScrollView, Text, View} from 'react-native';
+import {Button} from './Components/Button';
+import {Footer} from './Components/Footer';
+import {HeaderTitle} from './Components/Header';
+import {TextBox} from './Components/TextBox';
 
 export default function App() {
   return (
     <ScrollView>
-      {/* <View style = {styles.header}>
-          <View style = {styles.innerContainer}>
-              <Text style = {styles.textHeadingStyle}>
-                  Log in  
-              </Text>
-              <Text style = {styles.textStyle}>
-              Enter your login details to access your account.
-              </Text>
-          </View>
-      </View> */}
-
       <HeaderTitle
         headText="Log in"
-        subText="Enter your login details to access your account."
-      />
+        subText="Enter your login details to access your account."/>
 
       <View style={styles.body}>
-        <TextInput
-          style={styles.input}
-          placeholder="Email/Phone Number"
-          placeholderTextColor="#999999"></TextInput>
-        <TextInput
-          style={styles.input}
-          placeholder="Password"
-          placeholderTextColor="#999999"
-          secureTextEntry={true}></TextInput>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Login</Text>
-        </TouchableOpacity>
+        <TextBox hint="Email/Phone Number" obscure={false} />
+        <TextBox hint="Password" obscure={true} />
+
+        <Button BtnText="Login" />
       </View>
+
       <View style={styles.bodyBottom}>
         <Text style={styles.bodyBottomText}>Forgot password?</Text>
         <Text
@@ -55,19 +32,13 @@ export default function App() {
         </Text>
         <Text style={styles.bodyBottomText}>Forgot email?</Text>
       </View>
-      <View style={styles.footer}>
-        <Text style={{color: '#000', fontWeight: 'bold'}}>
-          Here for the first time?
-        </Text>
-        <Text style={{marginLeft: 5, color: '#425563', fontWeight: 'bold'}}>
-          Sign Up
-        </Text>
-      </View>
+
+      <Footer leftText="Here for the first time?" rightText="Sign Up" />
     </ScrollView>
   );
 }
 
-const styles = StyleSheet.create({
+export const styles = StyleSheet.create({
   header: {
     backgroundColor: '#425563',
     paddingTop: 80,
@@ -132,8 +103,8 @@ const styles = StyleSheet.create({
   },
   footer: {
     flexDirection: 'row',
-    marginTop: 100,
-    marginBottom: 20,
+    marginTop: 80,
+    marginBottom: 30,
     alignItems: 'center',
     justifyContent: 'center',
   },
