@@ -1,13 +1,13 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, TextInput, ScrollView} from 'react-native';
+import { View, StyleSheet, ScrollView} from 'react-native';
 import {Footer} from './Components/Footer';
 import {HeaderTitle} from './Components/Header';
 import {Button} from './Components/Button';
 import {TextBox} from './Components/TextBox';
-import {styles} from './App'; 
+import {styles} from './Login'; 
 import { PassUI } from './Components/PassUI';
 
-export default function App() {
+export default function SignUp({navigation}) {
   return (
     <ScrollView>
       <HeaderTitle
@@ -29,10 +29,10 @@ export default function App() {
 
         <TextBox hint="Confirm Password" obscure={true} />
 
-        <Button BtnText = "Sign Up"/>
+        <Button BtnText = "Sign Up" Nav = "SignUp" onPress={()=> navigation.navigate('Login')}/>
         <Footer leftText = "Already have an account?" rightText = "Log In" />
       </View>
-    </ScrollView>
+    </ScrollView> 
   );
 }
 

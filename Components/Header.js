@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text} from 'react-native';
-import {styles} from '../App'
+import {styles} from '../Login'
 
 export function  HeaderTitle ({headText, subText}) {
   return (

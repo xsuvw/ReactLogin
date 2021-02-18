@@ -1,6 +1,6 @@
 import React from 'react';
 import {TextInput, StyleSheet} from 'react-native';
-import {styles} from '../App';
+import {styles} from '../Login';
 
 export function TextBox ({hint,obscure}) {
     return(
