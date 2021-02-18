@@ -1,23 +1,33 @@
 import React from 'react';
-import { StyleSheet, ScrollView, Text, View, TouchableOpacity} from 'react-native';
+import {
+  StyleSheet,
+  ScrollView,
+  Text,
+  View,
+  TouchableOpacity,
+} from 'react-native';
 import {Button} from './Components/Button';
 import {Footer} from './Components/Footer';
 import {HeaderTitle} from './Components/Header';
 import {TextBox} from './Components/TextBox';
 
 export default function Login({navigation}) {
-    
   return (
     <ScrollView>
       <HeaderTitle
         headText="Log in"
-        subText="Enter your login details to access your account."/>
+        subText="Enter your login details to access your account."
+      />
 
       <View style={styles.body}>
         <TextBox hint="Email/Phone Number" obscure={false} />
         <TextBox hint="Password" obscure={true} />
 
-        <Button BtnText="Login" Nav = "Login" onPress={()=> navigation.navigate('SignUp')}/>
+        <Button
+          BtnText="Login"
+          Nav="Login"
+          onPress={() => navigation.navigate('SignUp')}
+        />
       </View>
 
       <View style={styles.bodyBottom}>
@@ -35,11 +45,6 @@ export default function Login({navigation}) {
       </View>
 
       <Footer leftText="Here for the first time?" rightText="Sign Up" />
-      {/* <TouchableOpacity onPress = {()=> navigation.navigate("SignUp")}>
-            <Text>
-                click
-            </Text>
-      </TouchableOpacity> */}
     </ScrollView>
   );
 }
